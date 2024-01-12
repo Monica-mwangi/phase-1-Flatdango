@@ -35,4 +35,16 @@ fetch(filmListEndpoint)
     movieDetailsContainer.appendChild(availableTicketsElement);
   })
   .catch(error => console.error('Error:', error));
+  fetch('http://localhost:3000/films')
+  .then (response => response.json())
+  .then (data => {
+    data.forEach(movie => {
+        const filmItem = document.createElement('li');
+      filmItem.classList.add('film', 'item');
+      filmItem.textContent = movie.title;
+      // Add click event listener to show movie details when clicked
+      filmItem.addEventListener('click', () => showMovieDetails(movie));
+      
+    })
+  })
 

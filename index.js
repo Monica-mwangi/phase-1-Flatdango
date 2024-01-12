@@ -80,6 +80,39 @@ function showMovieDetails(movie) {
   availableTicketsElement.textContent =(`${availableTickets}`);
   movieDetailsContainer.appendChild(availableTicketsElement);
 
+
+  const buyTicketButton = document.createElement('button');
+  buyTicketButton.textContent = 'Buy Ticket';
+  buyTicketButton.addEventListener('click', () => buyTicket(movie));
+  movieDetailsContainer.appendChild(buyTicketButton);
+
+  function buyTicket(movie) {
+    // Check if there are available tickets
+    if (movie.tickets_sold < movie.capacity) {
+      // Update the number of available tickets
+      movie.tickets_sold += 1;
+
+      // Update the displayed available tickets on the frontend
+      availableTicketsElement.textContent = movie.capacity - movie.tickets_sold;
+
+      // Optionally, you can add a confirmation message or further actions here
+      console.log('Ticket purchased successfully!');
+    } else {
+      // Handle case where there are no available tickets
+      console.log('Sorry, this showing is sold out.');
+
+       // Check if the movie is sold out and update accordingly
+  if (availableTickets <= 0) {
+    availableTicketsElement.textContent = 'Sold Out';
+    movieDetailsContainer.classList.add('sold-out');
+  } else {
+    availableTicketsElement.textContent = `${availableTickets}`;
+  }
+  
+  movieDetailsContainer.appendChild(availableTicketsElement);
+    }
+  }
+
 }
     })
   })

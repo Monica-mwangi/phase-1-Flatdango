@@ -34,7 +34,12 @@ fetch(filmListEndpoint)
     availableTicketsElement.textContent = (`${availableTickets}`);
     movieDetailsContainer.appendChild(availableTicketsElement);
   })
-  .catch(error => console.error('Error:', error));
+  
+  const filmsList = document.getElementById('films');
+const placeholderLi = document.getElementById('placeholder');
+if (placeholderLi) {
+  filmsList.removeChild(placeholderLi);
+}
   fetch('http://localhost:3000/films')
   .then (response => response.json())
   .then (data => {
@@ -78,4 +83,5 @@ function showMovieDetails(movie) {
 }
     })
   })
+  .catch(error => console.error('Error:', error));
 

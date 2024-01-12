@@ -93,6 +93,7 @@ function showMovieDetails(movie) {
       movie.tickets_sold += 1;
 
       // Update the displayed available tickets on the frontend
+      
       availableTicketsElement.textContent = movie.capacity - movie.tickets_sold;
 
       // Optionally, you can add a confirmation message or further actions here

@@ -5,13 +5,13 @@ ul#films {
   }
   
   ul#films li {
-    padding: 10px;
-    background-color: #f2f2f2;
+    padding: 5px;
+    background-color: darkmagenta;
     cursor: pointer;
   }
   
   ul#films li:hover {
-    background-color: #ddd;
+    background-color: aliceblue;
   }
   
   ul#films li.film.item {
@@ -19,12 +19,11 @@ ul#films {
   }
 
   body {
-    background-image: url('https://cdn.pixabay.com/photo/2016/03/26/22/26/tickets-1281602_640.jpg');
-    background-repeat: no-repeat;
-    background-size: cover;
+    background-color: darkmagenta;
   }
   #poster {
     width: 100px;;
-    height: auto;
+    padding: 20px;
   }
+  
   
